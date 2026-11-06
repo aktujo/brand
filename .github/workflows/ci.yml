@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: MIT
+# The licence check (REUSE) and a sign-off (DCO) on every commit of a pull request – both from falkoss/starterpack,
+# pinned by commit.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  licences:
+    uses: falkoss/starterpack/.github/workflows/reuse.yml@8fba58423b0b95131b436cb2edcb91adad742d71
+  sign-off:
+    uses: falkoss/starterpack/.github/workflows/dco.yml@8fba58423b0b95131b436cb2edcb91adad742d71
